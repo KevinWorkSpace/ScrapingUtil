@@ -45,16 +45,9 @@ public class ScrapingController {
 		//名字
 		name = name1.get(0).text();
 	    //导演
-		Elements director = doc.select("div#info span");
-	    dire = director.get(0).text();
-	    //演员
-	    actor = director.get(6).text();
-	    //年份
-	    year = director.get(15).text() + director.get(16).text();
-	    //类型
-	    type = director.get(9).text() + director.get(10).text();
-	    
-	    String sql = "INSERT INTO movie ( name, director, actor, year, type ) VALUES ('" + name + "','" + dire + "','" + actor + "','" + year + "','" + type + "');";  
+		Elements director = doc.select("div#info");
+		String info = director.text();
+	    String sql = "INSERT INTO movies ( name, info ) VALUES ('" + name + "','" + info + "');";  
 	    stmt.executeUpdate(sql);
         result_label.setText(name + "爬取成功");
 	}
