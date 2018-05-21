@@ -2,7 +2,6 @@ package application;
 	
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -18,15 +17,23 @@ public class Main extends Application {
 	private Statement stmt;
 	
 	private Stage stage;
-	
+	/**
+	 * <b>得到Stage对象</b>
+	 * @return Stage对象
+	 */
 	public Stage getStage() {
 		return stage;
 	}
-	
+	/**
+	 * <b>得到Statement对象</b>
+	 * @return Statement对象
+	 */
 	public Statement getStatement() {
 		return stmt;
 	}
-	
+	/**
+	 * <b>初始化程序界面</b>
+	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception {
         Connection conn = null;
@@ -55,7 +62,10 @@ public class Main extends Application {
         	e.printStackTrace();
         }
 	}
-	
+	/**
+	 * <b>程序主入口</b>
+	 * @param args 参数
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}

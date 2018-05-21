@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -7,12 +8,20 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ScrapingController">
    <center>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" prefHeight="229.0" prefWidth="580.0" spacing="40.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="search_text" />
+            <TextField fx:id="search_text" prefHeight="23.0" prefWidth="352.0" />
             <Button fx:id="search_button" mnemonicParsing="false" onAction="#search" text="爬取" />
-            <Label fx:id="result_label" prefHeight="47.0" prefWidth="98.0" />
          </children>
+         <BorderPane.margin>
+            <Insets left="20.0" />
+         </BorderPane.margin>
       </HBox>
    </center>
+   <top>
+      <Label prefHeight="67.0" prefWidth="201.0" text="请输入想要爬取的电影的网址(豆瓣网)" BorderPane.alignment="CENTER" />
+   </top>
+   <bottom>
+      <Label fx:id="result_label" alignment="CENTER" prefHeight="61.0" prefWidth="316.0" BorderPane.alignment="CENTER" />
+   </bottom>
 </BorderPane>
